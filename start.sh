@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 set -o errexit
 
-mkdir -p media
+python manage.py shell -c "import os; from django.conf import settings; os.makedirs(settings.MEDIA_ROOT, exist_ok=True); print('MEDIA_ROOT:', settings.MEDIA_ROOT)"
+
 python manage.py migrate
 
 python manage.py shell -c "
