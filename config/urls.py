@@ -3,6 +3,8 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from apps.accounts.views import logout_user
+from django.urls import re_path
+from config.media_serve import media_serve
 
 from apps.accounts.views import AppLoginView, AppLogoutView, register, edit_profile
 
@@ -27,3 +29,6 @@ urlpatterns = [
 
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns += [
+    re_path(r"^media/(?P<path>.*)$", media_serve),
+]
