@@ -1,0 +1,21 @@
+:root{
+  --dc-bg: #0b0f14;
+  --dc-panel: #0f141b;
+  --dc-border: #2b2f36;
+  --dc-text: #e6e6e6;
+}
+body{ background: var(--dc-bg) !important; }
+.card{ background: var(--dc-panel) !important; }
+.list-group-item.active{ background: #2b3a55 !important; border-color: var(--dc-border) !important; }
+.avatar-sm{ width: 32px; height: 32px; object-fit: cover; }
+.avatar-lg{ width: 72px; height: 72px; object-fit: cover; }
+.msg-text{ white-space: pre-wrap; }
+.status-dot{
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  border: 1px solid #555;
+}
+.status-online{ background: #28a745; }
+.status-offline{ background: #6c757d; }

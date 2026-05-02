@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %}Profil{% endblock %}
+{% block content %}
+<div class="container py-4">
+  <div class="row justify-content-center">
+    <div class="col-12 col-lg-7">
+      <div class="card bg-black text-light border-secondary shadow">
+        <div class="card-body p-4">
+          <h3 class="mb-3">Edycja profilu</h3>
+          <div class="d-flex align-items-center gap-3 mb-3">
+            {% if user.profile.avatar %}
+              <img src="{{ user.profile.avatar.url }}" class="avatar-lg rounded-circle border border-secondary">
+            {% else %}
+              <div class="avatar-lg rounded-circle bg-secondary d-flex align-items-center justify-content-center">
+                <span class="fw-bold">{{ user.username|slice:":1"|upper }}</span>
+              </div>
+            {% endif %}
+            <div>
+              <div class="fw-bold">{{ user.username }}</div>
+              <div class="small text-secondary">{{ user.email }}</div>
+            </div>
+          </div>
+
+          <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="mb-3">
+              <label class="form-label">Avatar</label>
+              {{ form.avatar }}
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Opis</label>
+              {{ form.bio }}
+            </div>
+            <button class="btn btn-primary">Zapisz</button>
+            <a class="btn btn-outline-light ms-2" href="{% url 'chat:home' %}">Wróć</a>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  document.querySelectorAll("input[type=file]").forEach(i => i.classList.add("form-control","bg-dark","text-light","border-secondary"));
+</script>
+{% endblock %}

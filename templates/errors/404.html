@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}404{% endblock %}
+{% block content %}
+<div class="container py-5">
+  <div class="card bg-black text-light border-secondary shadow">
+    <div class="card-body p-4">
+      <h2 class="mb-2">404 — Nie znaleziono strony</h2>
+      <p class="text-secondary mb-0">Wygląda na to, że ta strona nie istnieje.</p>
+      <a class="btn btn-primary mt-3" href="{% url 'chat:home' %}">Powrót do aplikacji</a>
+    </div>
+  </div>
+</div>
+{% endblock %}
