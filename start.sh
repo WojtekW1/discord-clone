@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 set -o errexit
 
+mkdir -p media
 python manage.py migrate
 
 python manage.py shell -c "
