@@ -9,7 +9,7 @@ body{ background: var(--dc-bg) !important; }
 .list-group-item.active{ background: #2b3a55 !important; border-color: var(--dc-border) !important; }
 .avatar-sm{ width: 32px; height: 32px; object-fit: cover; }
 .avatar-lg{ width: 72px; height: 72px; object-fit: cover; }
-.msg-text{ white-space: pre-wrap; }
+.msg-text{ white-space: pre-wrap; color: white; }
 .status-dot{
   width: 10px;
   height: 10px;
